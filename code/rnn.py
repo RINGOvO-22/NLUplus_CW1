@@ -66,7 +66,11 @@ class RNN(Model):
             ##########################
             # --- your code here --- #
             ##########################
-            s[t+1] = sigmoid(np.dot(s[t], self.U.T) + np.dot(x[t], self.V.T))
+            
+            # turn into one-hot
+            word = make_onehot(x[t], self.vocab_size)
+
+            s[t+1] = sigmoid(np.dot(s[t], self.U.T) + np.dot(word, self.V.T))
             y[t] = softmax(np.dot(s[t+1], self.W.T))
 
         return y, s
