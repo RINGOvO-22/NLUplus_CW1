@@ -46,6 +46,8 @@ class Runner(object):
         # --- your code here --- #
         ##########################
 
+        
+
         return loss
 
     def compute_loss_np(self, x, d):
