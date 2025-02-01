@@ -41,3 +41,7 @@ RNN 反向传播:
 * 梯度消失/梯度爆炸的风险来源于上图中的累乘部分
 
   <img src="./README.assets/image-20250201232538259.png" alt="image-20250201232538259" style="zoom:25%;" />
+
+  * 解决方法
+    * LSTM, GRU
+    * CW1 中提到的 truncated BPTT ?
