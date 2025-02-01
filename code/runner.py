@@ -105,7 +105,10 @@ class Runner(object):
         ##########################
         # --- your code here --- #
         ##########################
-
+        loss = 0
+        for p in range(len(X)):
+            loss += self.compute_loss(X[p] + D[p])
+        mean_loss = loss/np.size(X)
         return mean_loss
 
     def train(self, X, D, X_dev, D_dev, epochs=10, learning_rate=0.5, anneal=5, back_steps=0, batch_size=100,
