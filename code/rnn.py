@@ -73,6 +73,7 @@ class RNN(Model):
             s[t+1] = sigmoid(np.dot(s[t], self.U.T) + np.dot(word, self.V.T))
             y[t] = softmax(np.dot(s[t+1], self.W.T))
 
+        # y = y.max(axis=1)
         return y, s
     
     def acc_deltas(self, x, d, y, s):
